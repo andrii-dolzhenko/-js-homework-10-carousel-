@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CANBY Glass Design Studio product carousel">
+
+  <title>CANBY — Glass Collection</title>
+
+  <link rel="icon" href="src/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="src/style.css">
+
+  <style>
+    @media (min-width: 1400px) {
+      .carousel__content {
+        width: min(34vw, 570px);
+      }
+
+      .carousel__title {
+        max-width: 570px;
+        font-size: clamp(68px, 4.7vw, 90px);
+        line-height: 0.88;
+      }
+    }
+
+    @media (min-width: 1800px) {
+      .carousel__content {
+        width: min(32vw, 600px);
+      }
+
+      .carousel__title {
+        max-width: 600px;
+        font-size: 88px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main id="carousel" class="carousel" data-tint="amber" data-interval="6000">
+    <div class="carousel__background" aria-hidden="true"></div>
+    <div class="carousel__tint" aria-hidden="true"></div>
+    <div class="carousel__embers" aria-hidden="true"></div>
+
+    <header class="carousel__brand">
+      <img class="carousel__logo" src="src/assets/images/canby-logo.png" alt="CANBY Glass Design Studio">
+    </header>
+
+    <section class="carousel__content" aria-live="polite">
+      <p class="carousel__counter">
+        <span id="current-number">01</span>
+        <span aria-hidden="true">/</span>
+        <span>05</span>
+      </p>
+
+      <div class="carousel__copy-mask">
+        <p id="product-label" class="carousel__label">
+          Signature collection
+        </p>
+
+        <h1 id="product-title" class="carousel__title">
+          Amber Hookah
+        </h1>
+
+        <p id="product-description" class="carousel__description">
+          Hand-blown crystal glass with a warm amber finish and handcrafted
+          metal details.
+        </p>
+
+        <p id="product-price" class="carousel__price">€420</p>
+      </div>
+    </section>
+
+    <div id="slides-container" class="carousel__stage">
+      <article class="slide active" data-number="01" data-label="Signature collection" data-title="Amber Hookah"
+        data-description="Hand-blown crystal glass with a warm amber finish and handcrafted metal details."
+        data-price="€420" data-tint="amber" aria-label="Amber Hookah">
+        <img class="slide__product slide__product--hookah" src="src/assets/images/canby-product-01-amber-hookah.webp"
+          alt="Amber glass hookah">
+      </article>
+
+      <article class="slide" data-number="02" data-label="Sculptural glass" data-title="Ember Bowl"
+        data-description="A sculptural crystal bowl shaped by fire, precise cuts and hand-polished reflections."
+        data-price="€180" data-tint="copper" aria-label="Ember Bowl">
+        <img class="slide__product slide__product--bowl" src="src/assets/images/canby-product-02-ember-bowl.webp"
+          alt="Faceted amber crystal bowl">
+      </article>
+
+      <article class="slide" data-number="03" data-label="Interior collection" data-title="Luminous Vase"
+        data-description="A hand-shaped glass vase with flowing lines, warm reflections and a sculptural silhouette."
+        data-price="€260" data-tint="honey" aria-label="Luminous Vase">
+        <img class="slide__product slide__product--vase" src="src/assets/images/canby-product-03-luminous-vase.webp"
+          alt="Sculptural luminous glass vase">
+      </article>
+
+      <article class="slide" data-number="04" data-label="Ambient lighting" data-title="Amber Glow Lamp"
+        data-description="A hand-blown glass lamp designed to create a soft amber glow and a warm atmosphere."
+        data-price="€340" data-tint="gold" aria-label="Amber Glow Lamp">
+        <img class="slide__product slide__product--lamp" src="src/assets/images/canby-product-04-amber-glow-lamp.webp"
+          alt="Amber glass table lamp">
+      </article>
+
+      <article class="slide" data-number="05" data-label="Curated gifts" data-title="Artisan Gift Set"
+        data-description="A crystal decanter and two glasses presented in premium CANBY gift packaging."
+        data-price="€290" data-tint="garnet" aria-label="Artisan Gift Set">
+        <img class="slide__product slide__product--gift"
+          src="src/assets/images/canby-product-05-artisan-gift-set.webp" alt="CANBY crystal decanter gift set">
+      </article>
+    </div>
+
+    <div id="controls-container" class="carousel__controls">
+      <button id="prev-btn" class="carousel__arrow carousel__arrow--prev" type="button"
+        aria-label="Previous product"></button>
+
+      <button id="next-btn" class="carousel__arrow carousel__arrow--next" type="button"
+        aria-label="Next product"></button>
+
+      <div class="carousel__timeline">
+        <button id="pause-btn" class="carousel__playback" type="button" aria-label="Pause carousel">
+          <i class="fas fa-pause" aria-hidden="true"></i>
+        </button>
+
+        <div class="carousel__progress" aria-hidden="true">
+          <div id="progress-fill" class="carousel__progress-fill"></div>
+        </div>
+
+        <p class="carousel__timeline-counter" aria-hidden="true">
+          <span id="timeline-number">01</span> / 05
+        </p>
+      </div>
+    </div>
+
+    <div id="indicators-container" class="carousel__indicators" role="group" aria-label="Choose product">
+      <button class="indicator active" type="button" data-slide-to="0" aria-label="Show Amber Hookah"></button>
+
+      <button class="indicator" type="button" data-slide-to="1" aria-label="Show Ember Bowl"></button>
+
+      <button class="indicator" type="button" data-slide-to="2" aria-label="Show Luminous Vase"></button>
+
+      <button class="indicator" type="button" data-slide-to="3" aria-label="Show Amber Glow Lamp"></button>
+
+      <button class="indicator" type="button" data-slide-to="4" aria-label="Show Artisan Gift Set"></button>
+    </div>
+
+    <p class="carousel__hint">Drag, swipe or use arrow keys</p>
+  </main>
+
+  <script src="src/main.js" type="module"></script>
+</body>
+
+</html>

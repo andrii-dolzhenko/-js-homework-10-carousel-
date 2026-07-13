@@ -1,5 +1,13 @@
 # ДЗ #10
 
+## Demo
+
+GitHub Pages demo:
+
+```text
+https://andrii-dolzhenko.github.io/-js-homework-10-carousel-/
+```
+
 ## 1. Завантажуємо репозиторій та розгортаємо проект
 
 `npm install`
