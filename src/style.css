@@ -1208,16 +1208,19 @@ button {
     transition-duration: 0.01ms !important;
   }
 }
-/* Fix play icon rendering on mobile browsers */
+/* Mobile play icon fix */
 @media (max-width: 768px) {
-  .carousel__playback i.fa-play::before {
+  .carousel__playback i.fa-play {
     display: block;
     width: 0;
     height: 0;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-left: 12px solid currentColor;
-    content: '';
+    border-left: 13px solid currentColor;
     transform: translateX(2px);
+  }
+
+  .carousel__playback i.fa-play::before {
+    content: none !important;
   }
 }
